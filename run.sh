@@ -12,6 +12,9 @@ autoremoval() {
 }
 
 # changes for php 7.0
+sed -i "s/.*'installed' => false,.*/'installed'\ \=\>\ true\,/" /var/www/web/config/kerberos.php
+sed -i "s/.*'username' => 'root',.*/'username'\ \=\>\ \'$USERNAME\'\,/" /var/www/web/config/kerberos.php
+sed -i "s/.*'password' => 'root',.*/'password'\ \=\>\ \'$PASSWORD\'\,/" /var/www/web/config/kerberos.php
 echo "[www]" > /etc/php/7.0/fpm/pool.d/env.conf
 echo "" >> /etc/php/7.0/fpm/pool.d/env.conf
 env | grep "KERBEROSIO_" | sed "s/\(.*\)=\(.*\)/env[\1]='\2'/" >> /etc/php/7.0/fpm/pool.d/env.conf
