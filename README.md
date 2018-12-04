@@ -20,9 +20,11 @@ A Docker image (x86, ARMv7, ARMv8) is available on [**the Docker Hub**](https://
 
 After you've installed docker, you can open a command prompt and type in following command. This will pull the kerberos image and make the web interface available on port 80 and the livestream on port 8889. You can give the container a custom name using the **--name** property.
 
-    $ docker run --name camera1 -p 80:80 -p 8889:8889 -d kerberos/kerberos
-    $ docker run --name camera2 -p 81:80 -p 8890:8889 -d kerberos/kerberos
-    $ docker run --name camera3 -p 82:80 -p 8891:8889 -d kerberos/kerberos
+To auto-configure the web setup, add the USERNAME and PASSWORD environment variables. These are not required.
+
+    $ docker run --name camera1 -p 80:80 -p 8889:8889 -d kerberos/kerberos -e USERNAME='exampleuser' -e PASSWORD='examplepass'
+    $ docker run --name camera2 -p 81:80 -p 8890:8889 -d kerberos/kerberos -e USERNAME='exampleuser' -e PASSWORD='examplepass'
+    $ docker run --name camera3 -p 82:80 -p 8891:8889 -d kerberos/kerberos -e USERNAME='exampleuser' -e PASSWORD='examplepass'
 
 ## Or use dockeros (our docker creation tool)
 
