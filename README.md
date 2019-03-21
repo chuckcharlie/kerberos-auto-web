@@ -1,6 +1,6 @@
 # KERBEROS.**IO**
 
-Fork of [https://github.com/kerberos-io/docker](Kerberos-io/docker).
+Fork of [kerberos-io/docker](https://github.com/kerberos-io/docker).
 
 I created this fork to automate the web username/password setup. I wanted to deploy these containers quickly without any user interaction. For some reason I am getting a bunch of kernel crash dumps that eventually fill up the hard drive. With this setup, I can now recreate the container and destroy the image without any additional configuration.
 
