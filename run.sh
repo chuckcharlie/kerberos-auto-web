@@ -19,12 +19,6 @@ then
     sed -i "s/.*'password' => 'root',.*/'password'\ \=\>\ \'$PASSWORD\'\,/" /var/www/web/config/kerberos.php
 fi;
 
-# changes for php 7.0
-#echo "[www]" > /etc/php/7.0/fpm/pool.d/env.conf
-#echo "" >> /etc/php/7.0/fpm/pool.d/env.conf
-#env | grep "KERBEROSIO_" | sed "s/\(.*\)=\(.*\)/env[\1]='\2'/" >> /etc/php/7.0/fpm/pool.d/env.conf
-#service php7.0-fpm start
-
 copyConfigFiles() {
   # Check if the config dir is empty, this can happen due to mapping
   # an empty filesystem to the volume.
